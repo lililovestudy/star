@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+	char stuId[12];
+	printf("请输入学号:");
+	scanf("%s",&stuId,12);
+	printf("%s hello,GitHub",stuId);
+	return 0;
+ } 
