@@ -1,0 +1,636 @@
+:root {
+    --side-bar-bg-color: #fff;
+    --control-text-color: #777;
+    --select-text-bg-color: #ffafa3;
+    --active-file-text-color: #262626;
+    --active-file-border-color: #f22f27;
+    /* --active-file-bg-color: #fff3f0; */
+    --primary-color: #f22f27;
+    /* 中性色 */
+    --mid-1: #ffffff;
+    --mid-2: #fafafa;
+    --mid-3: #f5f5f5;
+    --mid-4: #f0f0f0;
+    --mid-5: #d9d9d9;
+    --mid-6: #bfbfbf;
+    --mid-7: #aaaaaa;
+    --mid-8: #595959;
+    --mid-9: #434343;
+    --mid-10: #262626;
+    --mid-11: #1f1f1f;
+    --mid-12: #141414;
+    --mid-13: #000000;
+    /* 主题色 */
+    --main-1: #fff3f0;
+    --main-2: #ffd4cc;
+    --main-3: #ffafa3;
+    --main-4: #ff887a;
+    --main-5: #ff5d52;
+    --main-6: #f22f27;
+    --main-7: #cc1616;
+    --main-8: #a60a0f;
+    --main-9: #80010a;
+    --main-10: #590009;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: "JetBrains Mono", 思源黑体, 微软雅黑, sans-serif !important;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--mid-10); /*文字颜色*/
+    background-color: var(--mid-1); /*背景色*/
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 30px 160px;
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+    margin-top: 30px;
+}
+
+
+a {
+    color: #4183C4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    /*border-bottom: 1px solid #32b16c; /*或aaaaaa*/
+    color: var(--mid-12);
+    padding-left: 9px;
+    border-left: 9px solid var(--main-9);
+}
+
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    color: var(--mid-12);
+    padding-left: 9px;
+    border-left: 7px solid var(--main-7);
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+    color: var(--mid-12);
+    padding-left: 9px;
+    border-left: 5px solid var(--main-5);
+}
+
+h4 {
+    font-size: 1.25em;
+    color: var(--mid-10);
+    padding-left: 9px;
+    border-left: 3px solid var(--main-3);
+}
+
+h5 {
+    font-size: 1em;
+    color: var(--mid-8);
+    padding-left: 9px;
+    border-left: 1px solid var(--main-1);
+}
+
+h6 {
+    font-size: 1em;
+    color: #777;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+li > ol,
+li > ul {
+    margin: 0 0;
+}
+
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: var(--mid-9);
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul,
+ol {
+    padding-left: 30px;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+blockquote {
+    border-left: 4px solid var(--mid-7);
+    padding: 0 15px;
+    color: var(--mid-11);
+}
+
+blockquote blockquote {
+    padding-right: 0;
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid #32b16c; /*或aaaaaa*/
+    margin: 0;
+    padding: 0;
+}
+
+/*表格样式*/
+table tr:nth-child(2n),
+thead {
+    background-color: var(--mid-4);
+}
+
+table th {
+    border: 1px solid #32b16c; /*或aaaaaa*/
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table td {
+    border: 1px solid #32b16c; /*或aaaaaa*/
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+/* 改变光标的颜色，在背景下能显示*/
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 3px solid #000000;
+    z-index: 3;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid var(--mid-5);
+    border-radius: 3px;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    font-family: "JetBrains Mono", 思源黑体, 微软雅黑, sans-serif !important;
+}
+
+/*代码格式*/
+code {
+    background-color: var(--mid-3);
+    padding: 0 2px 0 2px;
+}
+
+/*代码块格式*/
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    background-color: var(--mid-4);
+}
+
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+/* 标题点击后左边的提示图标 */
+#write > h1.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+    color: var(--mid-1);
+    background-color: var(--main-5);
+}
+
+#write > h2.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+    color: var(--mid-1);
+    background-color: var(--main-5);
+}
+
+#write > h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+    color: var(--mid-1);
+    background-color: var(--main-5);
+}
+
+#write > h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+    color: var(--mid-1);
+    background-color: var(--main-5);
+}
+
+#write > h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+    color: var(--mid-1);
+    background-color: var(--main-5);
+}
+
+#write > h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+    color: var(--mid-1);
+    background-color: var(--main-5);
+}
+
+/*我也不知道有啥用*/
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block > .code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer {
+    font-family: "JetBrains Mono", 思源黑体, 微软雅黑, sans-serif !important;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+/*脚注标记*/
+#write .md-footnote {
+    background-color: inherit;
+    color: var(--drake-highlight);
+    font-size: 0.9rem;
+    border-radius: 0.9rem;
+    padding-left: 0;
+}
+
+#write .md-footnote:before {
+    content: "[";
+}
+
+#write .md-footnote:after {
+    content: "]";
+}
+
+/*脚注内容*/
+.md-hover-tip .code-tooltip-content {
+    border-radius: 2px;
+}
+
+/*脚注标题*/
+span.md-def-name {
+    padding-right: 3ch;
+    padding-left: 0;
+    position: relative;
+    font-weight: normal;
+}
+
+/*脚注说明*/
+.footnotes {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #304455;
+    position: relative;
+}
+
+/*脚注工具提示文本*/
+.code-tooltip-content .md-plain {
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.code-tooltip-content code {
+    padding: 0 2px;
+    font-family: inherit;
+    color: #ffd760;
+    background-color: inherit;
+}
+
+.code-tooltip-content a {
+    color: #ffd760;
+}
+
+div.code-tooltip-content {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.footnotes {
+    opacity: 1;
+}
+
+.md-def-name:after {
+    content: ". ^";
+    color: #304455;
+}
+
+.md-def-footnote .md-def-name:before {
+    content: "";
+    color: #304455;
+    position: absolute;
+}
+
+.md-def-name:before {
+    content: "";
+    color: #304455;
+    position: absolute;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.file-list-item-summary {
+    font-size: 1em;
+}
+
+.pin-outline #outline-content .outline-active strong,
+.pin-outline .outline-active {
+    font-weight: 500;
+    color: var(--drake-highlight);
+}
+
+.file-list-item.active {
+    border-left: 4px solid var(--drake-accent);
+}
+
+/** 代码块高亮 */
+.cm-s-inner span.cm-number {
+    color: #4a86e8;
+}
+
+.cm-s-inner span.cm-atom {
+    color: #9e880d;
+}
+
+.cm-s-inner span.cm-def {
+    color: #00f;
+}
+
+.cm-s-inner span.cm-variable {
+    color: black;
+}
+
+.cm-s-inner span.cm-variable-2 {
+    color: #00627a;
+}
+
+.cm-s-inner span.cm-variable-3,
+.cm-s-inner span.cm-type {
+    color: #00627a;
+}
+
+.cm-s-inner span.cm-property {
+    color: black;
+}
+
+.cm-s-inner span.cm-keyword {
+    color: #708;
+}
+
+.cm-s-inner span.cm-operator {
+    color: black;
+}
+
+.cm-s-inner span.cm-comment {
+    color: #787878;
+}
+
+.cm-s-inner span.cm-string {
+    color: #008000;
+}
+
+.cm-s-inner span.cm-string-2 {
+    color: #008000;
+}
+
+.cm-s-inner span.cm-qualifier {
+    color: black;
+}
+
+.cm-s-inner span.cm-error {
+    color: red;
+}
+
+.cm-s-inner span.cm-attribute {
+    color: black;
+}
+
+.cm-s-inner span.cm-tag {
+    color: black;
+}
+
+.cm-s-inner span.cm-link {
+    color: #4a86e8;
+}
+
+.cm-s-inner span.cm-builtin {
+    color: black;
+}
+
+.cm-s-inner span.cm-bracket {
+    color: black;
+}
